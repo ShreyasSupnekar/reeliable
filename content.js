@@ -48,35 +48,35 @@ const heroContent = {
    --------------------------------------------------------------------- */
 const projects = [
   {
-    title: "Skincare Brand",
-    category: "AI UGC Product Ad",
+    title: "Foxtale Sunscreen",
+    category: "",
     description: "A creator-style routine ad built around one strong hook.",
-    media: "assets/work1.mp4",
+    media: "assets/WhatsApp Video 2026-10-05 at 3.23.37 PM.mp4",
   },
+  // {
+  //   title: "Fitness Brand",
+  //   category: "AI UGC Testimonial Ad",
+  //   description: "Testimonial-style ad with three hook variations.",
+  //   media: "assets/work2.mp4",
+  // },
   {
-    title: "Fitness Brand",
-    category: "AI UGC Testimonial Ad",
-    description: "Testimonial-style ad with three hook variations.",
-    media: "assets/work2.mp4",
-  },
-  {
-    title: "Coffee Brand",
-    category: "AI UGC Unboxing Ad",
-    description: "First-impression unboxing made for Reels.",
+    title: "Vai Dai Coffee",
+    category: "",
+    description: "First-impression of brand made for Reels.",
     media: "assets/work3.mp4",
   },
   {
-    title: "Fashion Label",
-    category: "AI UGC Try-On Ad",
-    description: "Try-on haul format with on-screen captions.",
+    title: "Lili Concept Store",
+    category: "",
+    description: "Try-on haul format.",
     media: "assets/work4.mp4",
   },
-  {
-    title: "Tech Gadget",
-    category: "AI UGC Demo Ad",
-    description: "Problem–solution demo in under 20 seconds.",
-    media: "assets/work5.mp4",
-  },
+  // {
+  //   title: "Tech Gadget",
+  //   category: "AI UGC Demo Ad",
+  //   description: "Problem–solution demo in under 20 seconds.",
+  //   media: "assets/work5.mp4",
+  // },
 ];
 
 
