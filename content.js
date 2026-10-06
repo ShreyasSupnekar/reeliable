@@ -48,6 +48,12 @@ const heroContent = {
    --------------------------------------------------------------------- */
 const projects = [
   {
+    title: "Lili Concept Store",
+    category: "",
+    description: "Try-on haul format.",
+    media: "assets/WhatsApp Video 2026-10-06 at 7.22.38 PM.mp4",
+  },
+   {
     title: "Foxtale Sunscreen",
     category: "",
     description: "A creator-style routine ad built around one strong hook.",
@@ -64,12 +70,6 @@ const projects = [
     category: "",
     description: "First-impression of brand made for Reels.",
     media: "assets/WhatsApp Video 2026-10-05 at 5.00.54 PM.mp4",
-  },
-  {
-    title: "Lili Concept Store",
-    category: "",
-    description: "Try-on haul format.",
-    media: "assets/work4.mp4",
   },
   // {
   //   title: "Tech Gadget",
