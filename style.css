@@ -325,17 +325,15 @@ section[id] { scroll-margin-top: calc(var(--nav-h) - 1px); }
 
 .work__grid {
   display: grid;
-  grid-template-columns: 1.25fr 1fr 1fr;
-  grid-template-rows: auto auto;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(12px, 1.6vw, 20px);
 }
 .card {
   position: relative; display: block; width: 100%; padding: 0; border: 0; margin: 0;
   text-align: left; cursor: pointer; background: #1a1714;
   border-radius: var(--radius); overflow: hidden; isolation: isolate;
-  min-height: 260px;
+  min-width: 0; aspect-ratio: 9 / 16;
 }
-.card--featured { grid-row: span 2; aspect-ratio: 9 / 15; }
 .card__media { position: absolute; inset: 0; transition: transform 1.1s var(--ease); }
 .card__media video, .card__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .card:hover .card__media, .card:focus-visible .card__media { transform: scale(1.04); }
@@ -349,7 +347,6 @@ section[id] { scroll-margin-top: calc(var(--nav-h) - 1px); }
 .card__cat { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; opacity: .8; }
 .card__title, .card__desc { display: block; }
 .card__title { font-family: var(--serif); font-size: clamp(24px, 2.2vw, 32px); line-height: 1.05; margin-top: 6px; }
-.card--featured .card__title { font-size: clamp(30px, 3.2vw, 46px); }
 .card__desc {
   font-size: 14px; line-height: 1.45; opacity: 0; max-height: 0; overflow: hidden;
   transition: opacity .4s, max-height .5s var(--ease), margin .5s var(--ease);
@@ -371,7 +368,6 @@ section[id] { scroll-margin-top: calc(var(--nav-h) - 1px); }
 .card__play svg { width: 16px; height: 16px; margin-left: 2px; }
 .card:hover .card__play { background: #fff; color: var(--ink); transform: scale(1.06); }
 .card .ph { justify-content: center; align-items: center; text-align: center; gap: 10px; padding-bottom: 34%; }
-.card--featured .ph { padding-bottom: 20%; }
 
 /* ---------- Why AI UGC (dark) ---------- */
 .why-ugc { background: var(--ink); color: var(--cream); }
@@ -560,9 +556,7 @@ html.is-locked { overflow: hidden; }
   .hero__title { max-width: 12ch; }
   .hero__visual { height: clamp(420px, 92vw, 560px); max-width: 560px; width: 100%; margin: 8px auto 0; }
 
-  .work__grid { grid-template-columns: 1fr 1fr; }
-  .card--featured { grid-column: 1 / -1; grid-row: auto; aspect-ratio: 4 / 5; }
-  .card { aspect-ratio: 3 / 4; min-height: 0; }
+  .work__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .card__desc { opacity: .85; max-height: 80px; margin-top: 8px; }
 
   .why-us__grid { grid-template-columns: 1fr; }
@@ -579,16 +573,16 @@ html.is-locked { overflow: hidden; }
   .phone--back-left { left: 0; }
   .phone--back-right { right: 0; }
 
-  .work__grid { gap: 10px; }
+  .work__grid { grid-template-columns: minmax(0, 1fr); gap: 10px; }
   .card { border-radius: 14px; }
   .card__overlay { padding: 40px 14px 14px; }
   .card__index { top: 12px; left: 14px; }
   .card__play { width: 36px; height: 36px; top: 10px; right: 10px; }
-  .card:not(.card--featured) .card__desc { display: none; }
-  .card:not(.card--featured) .card__title { font-size: 21px; }
-  .card:not(.card--featured) .card__cat { font-size: 10px; letter-spacing: .1em; }
-  .card:not(.card--featured) .ph__num { font-size: 44px; }
-  .card:not(.card--featured) .ph__note { display: none; }
+  .card .card__desc { display: none; }
+  .card .card__title { font-size: 21px; }
+  .card .card__cat { font-size: 10px; letter-spacing: .1em; }
+  .card .ph__num { font-size: 44px; }
+  .card .ph__note { display: none; }
 
   .benefits { grid-template-columns: 1fr; }
   .benefit { border-right: 0; margin-right: 0; border-bottom: 1px solid var(--line-light); padding: 28px 0; }

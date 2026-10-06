@@ -43,7 +43,7 @@ const heroContent = {
    • Put your files in the "assets" folder.
    • Then write the file name in "media" below.
    • Videos (.mp4 / .webm) and images (.jpg / .png / .webp) both work.
-   • The FIRST project is shown big (your best ad goes first!).
+   • All projects use equal-sized portrait frames, in the order below.
    • Until a file exists, a stylish placeholder is shown automatically.
    --------------------------------------------------------------------- */
 const projects = [

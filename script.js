@@ -150,7 +150,7 @@
     list.forEach((p, i) => {
       const card = document.createElement("button");
       card.type = "button";
-      card.className = "card reveal" + (i === 0 ? " card--featured" : "");
+      card.className = "card reveal";
       card.setAttribute("aria-label", "Watch " + (p.title || "project " + (i + 1)) + (p.category ? " — " + p.category : ""));
 
       const media = document.createElement("div");
