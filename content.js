@@ -63,7 +63,7 @@ const projects = [
     title: "Vai Dai Coffee",
     category: "",
     description: "First-impression of brand made for Reels.",
-    media: "assets/work3.mp4",
+    media: "assets/WhatsApp Video 2026-10-05 at 5.00.54 PM.mp4",
   },
   {
     title: "Lili Concept Store",
