@@ -88,7 +88,7 @@ In `content.js`, under `projects`, each ad looks like this:
 * `category` → the type of ad
 * `description` → one short sentence
 
-The first one in the list is the big featured ad.
+All ads use equal-sized portrait frames, in the order listed.
 
 ## 3. Add your email
 
