@@ -59,24 +59,12 @@ const projects = [
     description: "A creator-style routine ad built around one strong hook.",
     media: "assets/WhatsApp Video 2026-10-05 at 3.23.37 PM.mp4",
   },
-  // {
-  //   title: "Fitness Brand",
-  //   category: "AI UGC Testimonial Ad",
-  //   description: "Testimonial-style ad with three hook variations.",
-  //   media: "assets/work2.mp4",
-  // },
   {
     title: "Vai Dai Coffee",
     category: "",
     description: "First-impression of brand made for Reels.",
     media: "assets/WhatsApp Video 2026-10-05 at 5.00.54 PM.mp4",
   },
-  // {
-  //   title: "Tech Gadget",
-  //   category: "AI UGC Demo Ad",
-  //   description: "Problem–solution demo in under 20 seconds.",
-  //   media: "assets/work5.mp4",
-  // },
 ];
 
 
