@@ -1,0 +1,19 @@
+PUT YOUR 5 ADS IN THIS FOLDER
+=============================
+
+Name them like this:
+
+  work1.mp4   <- your BEST ad (shown big)
+  work2.mp4
+  work3.mp4
+  work4.mp4
+  work5.mp4
+
+Images also work (work1.jpg, work2.png ...). If you use a different
+name or file type, open content.js and change the "media" line to match.
+
+Tip: keep each video under ~10 MB so the site stays fast.
+(See README.md -> "Make your videos small" for a free way to shrink them.)
+
+Until a file is here, the website shows a stylish placeholder instead.
+You can delete this text file once your ads are in.
