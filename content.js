@@ -20,9 +20,9 @@ const agencyInfo = {
   phone: "8010534138",               // Your phone number (digits only)
   countryCode: "91",                 // Country code without the +  (91 = India)
 
-  email: "",                         // e.g. "hello@youragency.com"
-  instagram: "",                     // Full link, e.g. "https://instagram.com/youragency"
-  x: "",                             // Full link, e.g. "https://x.com/youragency"
+  email: "contact@reeliable.studio",                         // e.g. "hello@youragency.com"
+  instagram: "https://www.instagram.com/reeliable.studios",                     // Full link, e.g. "https://instagram.com/youragency"
+  x: "x.com/reeliablestudio",                             // Full link, e.g. "https://x.com/youragency"
 };
 
 
@@ -48,12 +48,6 @@ const heroContent = {
    --------------------------------------------------------------------- */
 const projects = [
   {
-    title: "Reeliable Promo Ad",
-    category: "",
-    description: "Promo format",
-    media: "Samples/",
-  },
-   {
     title: "Foxtale Sunscreen",
     category: "",
     description: "A creator-style routine ad built around one strong hook.",
@@ -63,7 +57,13 @@ const projects = [
     title: "Amazfit Smartwatch",
     category: "",
     description: "UGC style Cinematic Display.",
-    media: "Samples/",
+    media: "Samples/1791368187549829",
+  },
+   {
+    title: "Tiffany & Co. Perfume",
+    category: "",
+    description: "Classic UGC format",
+    media: "Samples/1791702198539980.MP4",
   },
   {
     title: "Vai Dai Coffee",
@@ -75,7 +75,7 @@ const projects = [
     title: "OLLO Shoes",
     category: "",
     description: "UGC Feature format.",
-    media: "Samples/",
+    media: "Samples/1791403417851367.MP4",
   },
 ];
 
