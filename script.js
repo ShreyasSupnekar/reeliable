@@ -8,7 +8,7 @@
   // Safe fallbacks in case something in content.js is missing
   const info = (typeof agencyInfo !== "undefined" && agencyInfo) || {};
   const hero = (typeof heroContent !== "undefined" && heroContent) || {};
-  const work = (typeof projects !== "undefined" && Array.isArray(projects)) ? projects.slice(0, 5) : [];
+  const work = (typeof projects !== "undefined" && Array.isArray(projects)) ? projects.slice(0, 6) : [];
   const formCfg = (typeof formSettings !== "undefined" && formSettings) || {};
 
   const $ = (sel, root = document) => root.querySelector(sel);
@@ -62,6 +62,12 @@
       const handle = v.replace(/\/+$/, "").split("/").pop().split("?")[0];
       return { href: v, label: handle ? "@" + handle.replace(/^@/, "") : v };
     }
+    // Accept "x.com/handle" style links too
+    if (/^(www\.)?[a-z0-9-]+\.[a-z]+\//i.test(v)) {
+      const full = "https://" + v;
+      const handle = v.replace(/\/+$/, "").split("/").pop().split("?")[0];
+      return { href: full, label: "@" + handle.replace(/^@/, "") };
+    }
     v = v.replace(/^@/, "");
     return { href: base + v, label: "@" + v };
   }
@@ -86,6 +92,9 @@
 
     const x = socialLink(info.x, "https://x.com/");
     setContact("contact-x", x && x.href, x ? x.label : "Coming soon", true);
+
+    const fb = socialLink(info.facebook, "https://www.facebook.com/");
+    setContact("contact-facebook", fb && fb.href, fb ? fb.label : "Coming soon", true);
   }
 
   /* ---------------- 3. Media (video / image with placeholder) ---------------- */
@@ -145,7 +154,7 @@
   function buildWork() {
     const grid = $("#work-grid");
     if (!grid) return;
-    const list = work.length ? work : Array.from({ length: 5 }, (_, i) => ({ title: "Project " + pad(i + 1), category: "AI UGC Ad", description: "", media: "" }));
+    const list = work.length ? work : Array.from({ length: 6 }, (_, i) => ({ title: "Project " + pad(i + 1), category: "AI UGC Ad", description: "", media: "" }));
 
     list.forEach((p, i) => {
       const card = document.createElement("button");
@@ -289,30 +298,47 @@
     document.getElementById(id).addEventListener("input", () => { if (attempted) validateField(id); });
   });
 
+  // Sends the form details by email to contact@reeliable.studio
   async function sendForm(data) {
     const subject = "New strategy call request — " + data.first_name + " " + data.last_name;
+    const toEmail = isFilled(info.email) && /\S+@\S+\.\S+/.test(info.email) ? info.email.trim() : "";
+
+    // Option A (recommended): Web3Forms — emails the address the key was created with
     if (isFilled(formCfg.web3formsKey)) {
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify(Object.assign({ access_key: formCfg.web3formsKey.trim(), subject: subject, from_name: "Website" }, data)),
+        body: JSON.stringify(Object.assign({
+          access_key: formCfg.web3formsKey.trim(),
+          subject: subject,
+          from_name: (info.name || "Website") + " Website",
+          replyto: data.email,
+        }, data)),
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok || json.success === false) throw new Error(json.message || "Request failed");
       return;
     }
-    const email = isFilled(info.email) && /\S+@\S+\.\S+/.test(info.email) ? info.email.trim() : "";
-    if (email) {
-      const res = await fetch("https://formsubmit.co/ajax/" + encodeURIComponent(email), {
+
+    // Option B (fallback): FormSubmit — emails agencyInfo.email (needs one-time activation)
+    if (toEmail) {
+      const res = await fetch("https://formsubmit.co/ajax/" + encodeURIComponent(toEmail), {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify(Object.assign({ _subject: subject, _template: "table", _captcha: "false" }, data)),
+        body: JSON.stringify(Object.assign({
+          _subject: subject,
+          _template: "table",
+          _captcha: "false",
+          _replyto: data.email,
+        }, data)),
       });
-      if (!res.ok) throw new Error("Request failed");
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok || String(json.success) === "false") throw new Error(json.message || "Request failed");
       return;
     }
+
     // No email or key yet: nothing to send to (preview mode).
-    console.info("[Form preview] Add your email in content.js to receive these requests:", data);
+    console.info("[Form preview] Add your email or Web3Forms key in content.js to receive these requests:", data);
   }
 
   form.addEventListener("submit", async (e) => {
