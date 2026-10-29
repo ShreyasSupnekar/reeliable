@@ -48,6 +48,12 @@ const heroContent = {
    --------------------------------------------------------------------- */
 const projects = [
   {
+    title: "Reeliable Promo Ad",
+    category: "",
+    description: "Promo Reel Format",
+    media: "Samples/1791801689559561.MP4",
+  }
+   {
     title: "Foxtale Sunscreen",
     category: "",
     description: "A creator-style routine ad built around one strong hook.",
@@ -57,7 +63,7 @@ const projects = [
     title: "Amazfit Smartwatch",
     category: "",
     description: "UGC style Cinematic Display.",
-    media: "Samples/1791368187549829",
+    media: "Samples/1791368187549829.MP4",
   },
    {
     title: "Tiffany & Co. Perfume",
