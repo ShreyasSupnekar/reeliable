@@ -53,7 +53,7 @@ const projects = [
     title: "Reeliable Promo Ad",
     category: "",
     description: "Promo Reel Format",
-    media: "Samples/1791801689559561.MP4",
+    media: "assets/promo.mp4",
   },
   {
     title: "Foxtale Sunscreen",
@@ -65,13 +65,13 @@ const projects = [
     title: "Amazfit Smartwatch",
     category: "",
     description: "UGC style Cinematic Display.",
-    media: "Samples/1791368187549829.MP4",
+    media: "assets/amazfit.mp4",
   },
   {
     title: "Tiffany & Co. Perfume",
     category: "",
     description: "Classic UGC format",
-    media: "Samples/1791702198539980.MP4",
+    media: "assets/tiffany.mp4",
   },
   {
     title: "Vai Dai Coffee",
@@ -83,7 +83,7 @@ const projects = [
     title: "OLLO Shoes",
     category: "",
     description: "UGC Feature format.",
-    media: "Samples/1791403417851367.MP4",
+    media: "assets/ollo.mp4",
   },
 ];
 
