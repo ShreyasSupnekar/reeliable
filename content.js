@@ -6,7 +6,7 @@
 
    Rules (so nothing breaks):
    • Keep the quotation marks " " around every piece of text.
-   • Keep the comma , at the end of each line.
+   • Keep the comma , at the end of each line AND after each project's }.
    • If you want to leave something empty, use two quotes: ""
    ===================================================================== */
 
@@ -20,9 +20,10 @@ const agencyInfo = {
   phone: "8010534138",               // Your phone number (digits only)
   countryCode: "91",                 // Country code without the +  (91 = India)
 
-  email: "contact@reeliable.studio",                         // e.g. "hello@youragency.com"
-  instagram: "https://www.instagram.com/reeliable.studios",                     // Full link, e.g. "https://instagram.com/youragency"
-  x: "x.com/reeliablestudio",                             // Full link, e.g. "https://x.com/youragency"
+  email: "contact@reeliable.studio",                              // Form requests are emailed here
+  instagram: "https://www.instagram.com/reeliable.studios",       // Full link
+  x: "https://x.com/reeliablestudio",                             // Full link
+  facebook: "https://www.facebook.com/Reeliable.studio",          // Full link
 };
 
 
@@ -38,12 +39,13 @@ const heroContent = {
 
 
 /* ---------------------------------------------------------------------
-   3) YOUR 5 ADS  (the "Recent Work" section)
+   3) YOUR 6 ADS  (the "Recent Work" section)
    ---------------------------------------------------------------------
-   • Put your files in the "assets" folder.
+   • Put your files in the "assets" (or "Samples") folder.
    • Then write the file name in "media" below.
    • Videos (.mp4 / .webm) and images (.jpg / .png / .webp) both work.
-   • All projects use equal-sized portrait frames, in the order below.
+   • File names are CASE-SENSITIVE once online (.MP4 is not .mp4).
+   • Projects are shown in exactly the order below.
    • Until a file exists, a stylish placeholder is shown automatically.
    --------------------------------------------------------------------- */
 const projects = [
@@ -52,20 +54,20 @@ const projects = [
     category: "",
     description: "Promo Reel Format",
     media: "Samples/1791801689559561.MP4",
-  }
-   {
+  },
+  {
     title: "Foxtale Sunscreen",
     category: "",
     description: "A creator-style routine ad built around one strong hook.",
     media: "assets/WhatsApp Video 2026-10-05 at 3.23.37 PM.mp4",
   },
-   {
+  {
     title: "Amazfit Smartwatch",
     category: "",
     description: "UGC style Cinematic Display.",
     media: "Samples/1791368187549829.MP4",
   },
-   {
+  {
     title: "Tiffany & Co. Perfume",
     category: "",
     description: "Classic UGC format",
@@ -77,7 +79,7 @@ const projects = [
     description: "First-impression of brand made for Reels.",
     media: "assets/WhatsApp Video 2026-10-05 at 5.00.54 PM.mp4",
   },
-   {
+  {
     title: "OLLO Shoes",
     category: "",
     description: "UGC Feature format.",
@@ -87,14 +89,15 @@ const projects = [
 
 
 /* ---------------------------------------------------------------------
-   4) STRATEGY-CALL FORM (optional, but recommended)
+   4) STRATEGY-CALL FORM
    ---------------------------------------------------------------------
-   As soon as you add your email above, form requests are emailed to you
-   automatically (via FormSubmit). The very first time, FormSubmit sends
-   you one "Activate" email — click it once and you're done.
+   RECOMMENDED: Get a free key at https://web3forms.com using
+   contact@reeliable.studio and paste it below. Every form request is
+   then emailed to that address.
 
-   Want a more reliable option? Get a free key at https://web3forms.com
-   and paste it below. If a key is added, it is used instead.
+   If left empty, the form uses FormSubmit with the email above.
+   The very first time, FormSubmit sends one "Activate" email —
+   click it once and you're done.
    --------------------------------------------------------------------- */
 const formSettings = {
   web3formsKey: "",                  // e.g. "a1b2c3d4-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
